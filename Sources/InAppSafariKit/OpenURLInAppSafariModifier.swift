@@ -1,7 +1,7 @@
 //
 //  OpenURLInAppSafariModifier.swift
 //  InAppSafariKit
-//  
+//
 //  Created by Chronos2500 on 2025/02/06.
 //
 
@@ -10,6 +10,12 @@ import SafariServices
 
 struct OpenURLInAppSafariModifier: ViewModifier {
     @Environment(\.customSafariStyle) private var style
+    let entersReaderIfAvailable: Bool?
+    let barCollapsingEnabled: Bool?
+    let dismissButtonStyle: SFSafariViewController.DismissButtonStyle?
+    let preferredBarTintColor: UIColor?
+    let preferredControlTintColor: UIColor?
+    let modalPresentationStyle: UIModalPresentationStyle?
 
     func body(content: Content) -> some View {
         content
@@ -19,22 +25,21 @@ struct OpenURLInAppSafariModifier: ViewModifier {
                 }
 
                 let config = SFSafariViewController.Configuration()
-                config.entersReaderIfAvailable = style.entersReaderIfAvailable
-                config.barCollapsingEnabled = style.barCollapsingEnabled
+                config.entersReaderIfAvailable = entersReaderIfAvailable ?? style.entersReaderIfAvailable
+                config.barCollapsingEnabled = barCollapsingEnabled ?? style.barCollapsingEnabled
                 let vc = SFSafariViewController(url: url, configuration: config)
-                vc.dismissButtonStyle = .done
-                vc.preferredBarTintColor = style.preferredBarTintColor
-                vc.preferredControlTintColor = style.preferredControlTintColor
-                vc.modalPresentationStyle = style.modalPresentationStyle
+                vc.dismissButtonStyle = dismissButtonStyle ?? style.dismissButtonStyle
+                vc.preferredBarTintColor = preferredBarTintColor ?? style.preferredBarTintColor
+                vc.preferredControlTintColor = preferredControlTintColor ?? style.preferredControlTintColor
+                vc.modalPresentationStyle = modalPresentationStyle ?? style.modalPresentationStyle
                 UIApplication.shared.firstKeyWindow?.rootViewController?.present(vc, animated: true)
                 return .handled
-
             })
 
     }
 }
 
-public struct CustomSafariStyle {
+public struct CustomSafariStyle : Sendable{
     public var entersReaderIfAvailable: Bool
     public var barCollapsingEnabled: Bool
     public var dismissButtonStyle: SFSafariViewController.DismissButtonStyle
@@ -42,7 +47,7 @@ public struct CustomSafariStyle {
     public var preferredControlTintColor: UIColor?
     public var modalPresentationStyle: UIModalPresentationStyle
 
-    init(
+    public init(
         entersReaderIfAvailable: Bool = false,
         barCollapsingEnabled: Bool = true,
         dismissButtonStyle: SFSafariViewController.DismissButtonStyle = .done,
@@ -59,13 +64,36 @@ public struct CustomSafariStyle {
     }
 }
 
+
 extension EnvironmentValues {
     @Entry public var customSafariStyle = CustomSafariStyle()
 }
 
 extension View {
-    public func OpenURLInAppSafari() -> some View {
-        return modifier(OpenURLInAppSafariModifier())
+    /// Open the URL in the app using `SFSafariViewController`.
+    /// - Parameters:
+    ///   - entersReaderIfAvailable: Default value `false`
+    ///   - barCollapsingEnabled: Default value `true`
+    ///   - dismissButtonStyle: Default value `.done`
+    ///   - preferredBarTintColor: Default value `nil`
+    ///   - preferredControlTintColor: Default value `nil`
+    ///   - modalPresentationStyle: `.none` cannot be used. Default value `.fullScreen`
+    public func OpenURLInAppSafari(
+        entersReaderIfAvailable: Bool? = nil,
+        barCollapsingEnabled: Bool? = nil,
+        dismissButtonStyle: SFSafariViewController.DismissButtonStyle? = nil,
+        preferredBarTintColor: UIColor? = nil,
+        preferredControlTintColor: UIColor? = nil,
+        modalPresentationStyle: UIModalPresentationStyle? = nil
+    ) -> some View {
+        return modifier(OpenURLInAppSafariModifier(
+            entersReaderIfAvailable: entersReaderIfAvailable,
+            barCollapsingEnabled: barCollapsingEnabled,
+            dismissButtonStyle: dismissButtonStyle,
+            preferredBarTintColor: preferredBarTintColor,
+            preferredControlTintColor: preferredControlTintColor,
+            modalPresentationStyle: modalPresentationStyle
+        ))
     }
 }
 
