@@ -1,12 +1,12 @@
 //
-//  ContentView.swift
+//  Example.swift
 //  InAppSafariKitExample
 //  
 //  Created by Chronos2500 on 2025/02/11.
 //
 
 import SwiftUI
-import InAppSafariKit
+//import InAppSafariKit
 
 struct ContentView: View {
     private let url = URL(string: "https://www.apple.com")!
