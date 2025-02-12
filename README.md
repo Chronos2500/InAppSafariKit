@@ -2,7 +2,7 @@
 
 [![Swift Package Manager](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 
-[日本語はこちら](README_ja.md)
+[日本語はこちら](README-ja.md)
 
 A simple package for opening URLs within your app using `SFSafariViewController` in SwiftUI.  It allows you to open URLs, including those in `Link`, as in-app browsers using `SFSafariViewController`.
 
