@@ -124,6 +124,6 @@ struct InAppSafariKitExampleApp: App {
 ```
 
 ## ライセンス
-MIT ライセンスのもとで提供されます。
+MITライセンスのもとで提供されます。
 
 Chronos2500 © 2025
