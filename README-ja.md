@@ -13,6 +13,7 @@ SwiftUI で `SFSafariViewController` を利用して、アプリ内で URL を�
 ## 動作環境
 
 -   iOS 15.0+
+-   Xcode 16.0+
 
 ## インストール
 
