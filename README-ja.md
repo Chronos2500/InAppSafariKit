@@ -62,15 +62,13 @@ Link("Custom Bar Colors", destination: url)
 ```
 #### 使用例
 
-|                                                                |                                                                |
-| :----------------------------------------------------------------: | :----------------------------------------------------------------: |
-| ![]( ) | ![]( )|
-|  デフォルト設定                                                                 |   バーの色をカスタマイズ                                                                 |
+| ![Demo01](Assets/Demo01.gif) | ![Demo02](Assets/Demo01.gif) |
+|:--:|:--:|
+| デフォルト設定 | `preferredBarTintColor = .purple` |
 
-|                                                                |                                                                |
-| :----------------------------------------------------------------: | :----------------------------------------------------------------: |
-| ![]( ) | ![]( )|
-|  `dismissButtonStyle` を `.close` に設定                                                         |  `modalPresentationStyle` を `.pageSheet` に設定                                                                 |
+| ![Demo03](Assets/Demo03.gif) | ![Demo04](Assets/Demo04.gif) |
+|:--:|:--:|
+| `modalPresentationStyle = .pageSheet` | `modalPresentationStyle = .overFullScreen` |
 
 ### デフォルト設定
 
