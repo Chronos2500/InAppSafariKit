@@ -69,7 +69,7 @@ Link("Custom Bar Colors", destination: url)
     <td align="center"><img src="Assets/Demo02.gif" width="200"></td>
   </tr>
   <tr>
-    <td align="center">デフォルト設定</td>
+    <td align="center">Open by InAppSafariKit (Default)</td>
     <td align="center"><code>preferredBarTintColor = .purple</code></td>
   </tr>
 </table>
