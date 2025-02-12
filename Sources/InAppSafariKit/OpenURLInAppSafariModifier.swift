@@ -60,7 +60,7 @@ public struct CustomSafariStyle : Sendable{
         self.dismissButtonStyle = dismissButtonStyle
         self.preferredBarTintColor = preferredBarTintColor
         self.preferredControlTintColor = preferredControlTintColor
-        self.modalPresentationStyle = modalPresentationStyle
+        self.modalPresentationStyle = (modalPresentationStyle == .none) ? .fullScreen : modalPresentationStyle
     }
 }
 
