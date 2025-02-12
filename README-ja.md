@@ -2,7 +2,11 @@
 
 [![Swift Package Manager](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 
-SwiftUI で `SFSafariViewController` を利用して、アプリ内で URL を開くためのシンプルなパッケージです。`Link`等で開かれるURLも`SFSafariViewController`を使ったアプリ内ブラウザとして開けます。
+[English is here.](README.md)
+
+SwiftUIで `SFSafariViewController` を利用して、アプリ内でURLを開くためのシンプルなパッケージです。`Link`等で開かれるURLも`SFSafariViewController`を使ったアプリ内ブラウザとして開けます。
+
+<img src="Assets/Demo01.gif" width="200">
 
 ## 特徴
 
@@ -16,9 +20,14 @@ SwiftUI で `SFSafariViewController` を利用して、アプリ内で URL を�
 -   Xcode 16.0+
 
 ## インストール
+Swift Package Manager (SPM) を使用してインストールできます。
 
+1. Xcode でプロジェクトを開きます。
+2.  **File > Add Package Dependency...** を選択します。
+3. `https://github.com/Chronos2500/InAppSafariKit.git` を入力します。
+4. バージョン指定ルール等を設定し、 **Add Package** をクリックします。
 
-## 使用方法
+## 使い方
 ### 基本的な使い方
 
 ```swift
@@ -30,11 +39,10 @@ struct ContentView: View {
     var body: some View {
         NavigationStack{
             Form{
-                Section{
-                    Link("Open Default Browser", destination: url)
-                    Link("Open by InAppSafariKit (Default)", destination: url)
-                        .OpenURLInAppSafari()
-                }
+                Link("Open Default Browser", destination: url)
+                Link("Open by InAppSafariKit (Default)", destination: url)
+                    .OpenURLInAppSafari()
+                
             }
         }
     }
@@ -52,7 +60,7 @@ struct ContentView: View {
 -   `modalPresentationStyle`: `.fullScreen`
 ### カスタマイズ
 
-`.OpenURLInAppSafari()` モディファイアに引数を渡すことで、`SFSafariViewController` の設定をカスタマイズできます。
+`.OpenURLInAppSafari()` 修飾子で、`SFSafariViewController` の設定や掲示アニメーションをカスタマイズできます。
 
 ```swift
 Link("Custom Bar Colors", destination: url)
@@ -61,8 +69,9 @@ Link("Custom Bar Colors", destination: url)
         preferredControlTintColor: .white
     )
 ```
-#### 使用例
+#### カスタマイズ例
 
+<!-- 
 | ![Demo01](Assets/Demo01.gif) | ![Demo02](Assets/Demo02.gif) |
 |:--:|:--:|
 | Open by InAppSafariKit (Default) | preferredBarTintColor = .purple |
@@ -70,11 +79,12 @@ Link("Custom Bar Colors", destination: url)
 | ![Demo03](Assets/Demo03.gif) | ![Demo04](Assets/Demo04.gif) |
 |:--:|:--:|
 | modalPresentationStyle = .pageSheet | modalPresentationStyle = .overFullScreen |
+ -->
 
 <table>
   <tr>
-    <td align="center"><img src="Assets/Demo01.gif" width="200"></td>
-    <td align="center"><img src="Assets/Demo02.gif" width="200"></td>
+    <td align="center"><img src="Assets/Demo01.gif" width="150"></td>
+    <td align="center"><img src="Assets/Demo02.gif" width="150"></td>
   </tr>
   <tr>
     <td align="center">Open by InAppSafariKit (Default)</td>
@@ -84,8 +94,8 @@ Link("Custom Bar Colors", destination: url)
 
 <table>
   <tr>
-    <td align="center"><img src="Assets/Demo03.gif" width="200"></td>
-    <td align="center"><img src="Assets/Demo04.gif" width="200"></td>
+    <td align="center"><img src="Assets/Demo03.gif" width="150"></td>
+    <td align="center"><img src="Assets/Demo04.gif" width="150"></td>
   </tr>
   <tr>
     <td align="center"><code>modalPresentationStyle = .pageSheet</code></td>
@@ -95,7 +105,7 @@ Link("Custom Bar Colors", destination: url)
 
 ### デフォルト設定
 
-`customSafariStyle`環境変数を使うと、デフォルト値を変更できます。
+親Viewで`customSafariStyle`環境変数を使うと、子View以降のデフォルトスタイルを変更できます。
 
 ```swift
 @main
@@ -109,6 +119,8 @@ struct InAppSafariKitExampleApp: App {
 }
 
 ```
-## ライセンス
 
-MIT License
+## ライセンス
+MIT ライセンスのもとで提供されます。
+
+Chronos2500 © 2025
