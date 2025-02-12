@@ -63,13 +63,27 @@ Link("Custom Bar Colors", destination: url)
 ```
 #### 使用例
 
-| ![Demo01](Assets/Demo01.gif) | ![Demo02](Assets/Demo01.gif) |
-|:--:|:--:|
-| デフォルト設定 | `preferredBarTintColor = .purple` |
+<table>
+  <tr>
+    <td align="center"><img src="Assets/Demo01.gif" width="200"></td>
+    <td align="center"><img src="Assets/Demo02.gif" width="200"></td>
+  </tr>
+  <tr>
+    <td align="center">デフォルト設定</td>
+    <td align="center"><code>preferredBarTintColor = .purple</code></td>
+  </tr>
+</table>
 
-| ![Demo03](Assets/Demo03.gif) | ![Demo04](Assets/Demo04.gif) |
-|:--:|:--:|
-| `modalPresentationStyle = .pageSheet` | `modalPresentationStyle = .overFullScreen` |
+<table>
+  <tr>
+    <td align="center"><img src="Assets/Demo03.gif" width="200"></td>
+    <td align="center"><img src="Assets/Demo04.gif" width="200"></td>
+  </tr>
+  <tr>
+    <td align="center"><code>modalPresentationStyle = .pageSheet</code></td>
+    <td align="center"><code>modalPresentationStyle = .overFullScreen</code></td>
+  </tr>
+</table>
 
 ### デフォルト設定
 
