@@ -58,6 +58,9 @@ struct ContentView: View {
 -   `preferredBarTintColor`: `nil`
 -   `preferredControlTintColor`: `nil`
 -   `modalPresentationStyle`: `.fullScreen`
+
+詳細なサンプルは[Examplesフォルダのプロジェクト](Examples/InAppSafariKitExample/InAppSafariKitExample/ContentView.swift)にあります。
+
 ### カスタマイズ
 
 `.OpenURLInAppSafari()` 修飾子で、`SFSafariViewController` の設定や掲示アニメーションをカスタマイズできます。

@@ -62,6 +62,8 @@ By default, `SFSafariViewController` is configured as follows:
 -   `preferredControlTintColor`: `nil`
 -   `modalPresentationStyle`: `.fullScreen`
 
+For a detailed example, [see the project in the Examples folder](Examples/InAppSafariKitExample/InAppSafariKitExample/ContentView.swift).
+
 ### Customization
 
 You can customize the settings and presentation animation of `SFSafariViewController` using the `.OpenURLInAppSafari()` modifier.
