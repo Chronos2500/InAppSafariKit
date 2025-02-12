@@ -63,6 +63,14 @@ Link("Custom Bar Colors", destination: url)
 ```
 #### 使用例
 
+| ![Demo01](Assets/Demo01.gif) | ![Demo02](Assets/Demo02.gif) |
+|:--:|:--:|
+| Open by InAppSafariKit (Default) | preferredBarTintColor = .purple |
+
+| ![Demo03](Assets/Demo03.gif) | ![Demo04](Assets/Demo04.gif) |
+|:--:|:--:|
+| modalPresentationStyle = .pageSheet | modalPresentationStyle = .overFullScreen |
+
 <table>
   <tr>
     <td align="center"><img src="Assets/Demo01.gif" width="200"></td>
