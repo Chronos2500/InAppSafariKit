@@ -6,7 +6,7 @@ SwiftUI で `SFSafariViewController` を利用して、アプリ内で URL を�
 
 ## 特徴
 
--   `Link` で開く URL を、`SFSafariViewController` を使ってアプリ内で開きます。
+-   `Link` で開くURLを、`SFSafariViewController` を使ってアプリ内で開きます。
 -   `SFSafariViewController` の各種設定や掲示アニメーションスタイルをカスタマイズできます。
 -   デフォルト設定は`@Environment(\.customSafariStyle)`で変えられます
 
