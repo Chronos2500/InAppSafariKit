@@ -1,7 +1,7 @@
 //
 //  Example.swift
 //  InAppSafariKitExample
-//  
+//
 //  Created by Chronos2500 on 2025/02/11.
 //
 
@@ -51,3 +51,4 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
+
